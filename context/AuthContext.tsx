@@ -79,10 +79,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, [token]);
 
   useEffect(() => {
-    if (isAuthenticated && user?._id) {
+    if (isAuthenticated && user?._id && process.env.REACT_APP_API_URL) {
         if(socketRef.current) socketRef.current.disconnect();
 
-        socketRef.current = io('https://trulyyou-backend.onrender.com');
+        socketRef.current = io(process.env.REACT_APP_API_URL);
 
         socketRef.current.on('connect', () => {
             console.log("Socket connected, joining user room:", user._id);

@@ -134,16 +134,18 @@ const ThreadPage: React.FC = () => {
         };
         fetchThread();
 
-        socketRef.current = io('https://trulyyou-backend.onrender.com');
-        socketRef.current.emit('join_thread', { threadId });
-        socketRef.current.on('new_reply', (newReply: Reply) => {
-            setReplies(prevReplies => {
-                if (prevReplies.some(r => r._id === newReply._id)) return prevReplies;
-                return [...prevReplies, newReply];
+        if (process.env.REACT_APP_API_URL) {
+            socketRef.current = io(process.env.REACT_APP_API_URL);
+            socketRef.current.emit('join_thread', { threadId });
+            socketRef.current.on('new_reply', (newReply: Reply) => {
+                setReplies(prevReplies => {
+                    if (prevReplies.some(r => r._id === newReply._id)) return prevReplies;
+                    return [...prevReplies, newReply];
+                });
             });
-        });
-        
-        return () => { if (socketRef.current) socketRef.current.disconnect(); };
+            
+            return () => { if (socketRef.current) socketRef.current.disconnect(); };
+        }
     }, [threadId]);
 
     useEffect(() => {

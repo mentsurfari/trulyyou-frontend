@@ -176,27 +176,29 @@ const CohortPage: React.FC = () => {
 
         fetchCohortAndPosts();
 
-        // Setup WebSocket connection with full URL
-        socketRef.current = io('https://trulyyou-backend.onrender.com');
-        
-        socketRef.current.emit('join_cohort', { cohortId });
+        // Setup WebSocket connection using the environment variable
+        if (process.env.REACT_APP_API_URL) {
+            socketRef.current = io(process.env.REACT_APP_API_URL);
+            
+            socketRef.current.emit('join_cohort', { cohortId });
 
-        socketRef.current.on('new_post', (newPost: Post) => {
-             // Avoid adding duplicate posts from the sender
-            setPosts(prevPosts => {
-                if (prevPosts.some(p => p._id === newPost._id)) {
-                    return prevPosts;
-                }
-                return [...prevPosts, newPost];
+            socketRef.current.on('new_post', (newPost: Post) => {
+                // Avoid adding duplicate posts from the sender
+                setPosts(prevPosts => {
+                    if (prevPosts.some(p => p._id === newPost._id)) {
+                        return prevPosts;
+                    }
+                    return [...prevPosts, newPost];
+                });
             });
-        });
-        
-        // Clean up on component unmount
-        return () => {
-            if (socketRef.current) {
-                socketRef.current.disconnect();
-            }
-        };
+            
+            // Clean up on component unmount
+            return () => {
+                if (socketRef.current) {
+                    socketRef.current.disconnect();
+                }
+            };
+        }
 
     }, [cohortId]);
     

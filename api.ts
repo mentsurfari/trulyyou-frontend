@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://trulyyou-backend.onrender.com', // The address of your NestJS backend
+  baseURL: process.env.REACT_APP_API_URL, // Use environment variable for the backend URL
 });
 
 // Add a request interceptor to include the token in headers
