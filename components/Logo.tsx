@@ -1,0 +1,11 @@
+import React from 'react';
+
+const Logo: React.FC = () => {
+  const logoSrc = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjQwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMTM1IDQwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzI2NDY1MyI+PC9zdG9wPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMyQTlEOEYiPjwvc3RvcD4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDx0ZXh0IHg9IjUiIHk9IjMwIiBmaWxsPSJ1cmwoI2dyYWRpZW50KSIgZm9udC1mYW1pbHk9IkxvcmEsIHNlcmlmIiBmb250LXNpemU9IjI4cHgiIGZvbnQtd2VpZ2h0PSI2MDAiPgogICAgPHRzcGFuIGZpbGw9IiMwRDJDNDAiPlRydWx5PC90c3Bhbj48dHNwYW4gZm9udC1zdHlsZT0iaXRhbGljIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMkE5RDhGIj5Zb3U8L3RzcGFuPgogIDwvdGV4dD4KPC9zdmc+';
+
+  return (
+    <img src={logoSrc} alt="TrulyYou Logo" style={{ height: '36px' }} />
+  );
+};
+
+export default Logo;

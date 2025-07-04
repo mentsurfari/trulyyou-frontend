@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TrulyYou | The Sanctuary, Not The Marketplace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Lora', 'serif'],
+            },
+            colors: {
+              'brand-deep-blue': '#0D2C40',
+              'brand-teal': '#2A9D8F',
+              'brand-light-teal': '#E9F5F3',
+              'brand-sand': '#F4A261',
+              'brand-charcoal': '#264653',
+              'brand-light-gray': '#F7F9FA',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+
+
+
+
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.3",
+    "@google/genai": "https://esm.sh/@google/genai@^1.8.0",
+    "jspdf": "https://esm.sh/jspdf@^3.0.1",
+    "html2canvas": "https://esm.sh/html2canvas@^1.4.1",
+    "socket.io-client": "https://esm.sh/socket.io-client@^4.8.1",
+    "axios": "https://esm.sh/axios@^1.10.0",
+    "@nestjs/core": "https://esm.sh/@nestjs/core@^11.1.3",
+    "@nestjs/common": "https://esm.sh/@nestjs/common@^11.1.3",
+    "@nestjs/mongoose": "https://esm.sh/@nestjs/mongoose@^11.0.3",
+    "@nestjs/passport": "https://esm.sh/@nestjs/passport@^11.0.5",
+    "@nestjs/jwt": "https://esm.sh/@nestjs/jwt@^11.0.0",
+    "bcrypt": "https://esm.sh/bcrypt@^6.0.0",
+    "passport-jwt": "https://esm.sh/passport-jwt@^4.0.1",
+    "class-validator": "https://esm.sh/class-validator@^0.14.2",
+    "mongoose": "https://esm.sh/mongoose@^8.16.1",
+    "@nestjs/websockets": "https://esm.sh/@nestjs/websockets@^11.1.3",
+    "socket.io": "https://esm.sh/socket.io@^4.8.1",
+    "@nestjs/config": "https://esm.sh/@nestjs/config@^4.0.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
